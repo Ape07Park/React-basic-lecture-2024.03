@@ -13,18 +13,20 @@ export default function User() {
   // 추가/수정
   const handleSubmit = (event) => { 
     event.preventDefault(); // submit button을 누르면 페이지가 자동적으로 바뀌는 것 방지
-    const existUser = users.find(user => user.id == form.id); // user의 id와 form의 id가 같으면
-    const newUsers = [];
+    const existUser = users.find(user => user.id === form.id); // user의 id와 form의 id가 같으면
+    // const newUsers = [];
     if (existUser){
+
       // 수정
-      for (let user of users){
-        if (user.id == form.id){
-          newUsers.push(form); // 내가 입력한 거 푸쉬
-        }else{
-          newUsers.push(user); // 
-        }
-        setUsers(newUsers);
-      }
+      setUsers(users.map(user => (user.id === form.id) ? form : user)) // 폼걸 받거나 기존 유저를 받거나
+      // for (let user of users){
+      //   if (user.id == form.id){
+      //     newUsers.push(form); // 내가 입력한 거 푸쉬
+      //   }else{
+      //     newUsers.push(user); // 
+      //   }
+      //   setUsers(newUsers);
+      // }
       
     }else{
       // 추가 
@@ -78,7 +80,7 @@ export default function User() {
       <button onClick={() => {
         const id = prompt("ID 값을 입력하시오");
         // 입력한 id에 해당 x 인 것들을 newUser에 담기
-        const newUser = users.filter(user => user.id != id);   
+        const newUser = users.filter(user => user.id !== id);   
         // newUser 배열 생성 
         setUsers(newUser);        
       }}>삭제</button>
