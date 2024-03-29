@@ -1,7 +1,7 @@
-import '../apps/App.css';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { MdLibraryAddCheck } from "react-icons/md";
+import { Form, Button, InputGroup } from 'react-bootstrap';
 
 export default function AddTodo({ onAdd }) {
   const [text, setText] = useState('');
@@ -14,10 +14,12 @@ export default function AddTodo({ onAdd }) {
     setText('');
   }
   return (
-    <form onSubmit={handleSubmit} style={{marginTop: '20px'}}>
-      <input type='text' placeholder='할 일을 입력하세요.' value={text}
-        onChange={handleChange} />
-      <button><MdLibraryAddCheck /> 추가</button>
-    </form>
+    <Form onSubmit={handleSubmit}>
+      <InputGroup className="mt-5">
+        <Form.Control placeholder="할 일을 입력하세요." type='text' value={text}
+          onChange={handleChange} />
+        <Button variant="primary" type='submit'><MdLibraryAddCheck /> 추가</Button>
+      </InputGroup>
+    </Form>
   );
 }

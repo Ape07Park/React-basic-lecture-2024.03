@@ -1,18 +1,15 @@
-import '../apps/App.css';
+import { Nav } from 'react-bootstrap';
 
 export default function Header({filters, filter, onFilterChange}) {
   return (
-    <header>  
-      <ul>
-        {
-          filters.map((value, index) => (
-            <li key={index}>
-              <button onClick={() => onFilterChange(value)}>{value}</button>
-            </li>
-          ))
-        }
-      </ul> 
-      <hr />
-    </header>
+    <Nav className="justify-content-end" variant="underline" defaultActiveKey="all">
+      {
+        filters.map((value, index) => (
+          <Nav.Item>
+            <Nav.Link eventKey={index} onClick={() => onFilterChange(value)}>{value}</Nav.Link>
+          </Nav.Item>
+        ))
+      }
+    </Nav>
   );
 }

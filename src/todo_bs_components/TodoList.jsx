@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import '../apps/App.css';
 import AddTodo from './AddTodo';
 import Todo from './Todo';
+import { Table } from 'react-bootstrap';
 
 export default function TodoList({filter}) {
   const initData = readFromLocalStorage()
@@ -18,16 +18,16 @@ export default function TodoList({filter}) {
 
   const filteredTodos = getFilteredTodos(todos, filter);
   return (
-    <div>
-      <ul>
+    <>
+      <Table borderless size='sm'>
         {
           filteredTodos.map(todo => (
             <Todo todo={todo} onUpdate={handleUpdate} onDelete={handleDelete} />
           ))
         }
-      </ul>
+      </Table>
       <AddTodo onAdd={handleAdd} />
-    </div>
+    </>
   );
 }
 
