@@ -19,7 +19,7 @@ export default function TodoList({filter}) {
   const filteredTodos = getFilteredTodos(todos, filter);
   return (
     <div>
-      <ul style={{backgroundColor:"mediumpurple"}}>
+      <ul>
         {
           filteredTodos.map(todo => (
             <Todo todo={todo} onUpdate={handleUpdate} onDelete={handleDelete} />
