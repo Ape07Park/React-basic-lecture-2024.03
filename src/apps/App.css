@@ -16,3 +16,16 @@ input, button {
 }
 
 td {padding: 5px;}
+
+#count {text-align: center;}
+
+.btn {
+  text-align: center;
+  display :inline-block;
+  background-color: skyblue;        
+}
+
+.container {
+  text-align: center;
+}
+
