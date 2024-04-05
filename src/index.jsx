@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './apps/App';
 import reportWebVitals from './reportWebVitals';
+import ButtonAppBar from './mui/ButtonAppBar'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <div style={{marginTop:"40px", marginLeft:"20px"}}>
+    <ButtonAppBar />
+    </div>
   </React.StrictMode>
 );
 
