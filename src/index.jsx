@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './apps/App';
 import reportWebVitals from './reportWebVitals';
-import ButtonAppBar from './mui/ButtonAppBar'
+import BasicGrid from './mui/BasicGrid'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div style={{marginTop:"40px", marginLeft:"20px"}}>
-    <ButtonAppBar />
+    <BasicGrid />
     </div>
   </React.StrictMode>
 );
