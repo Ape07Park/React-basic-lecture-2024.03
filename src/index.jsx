@@ -3,15 +3,19 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './apps/App';
 import reportWebVitals from './reportWebVitals';
-import BasicGrid from './mui/BasicGrid'
+import Test from './mui/Test'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
+  
   <React.StrictMode>
     <div style={{marginTop:"40px", marginLeft:"20px"}}>
-    <BasicGrid />
+    <Test />
     </div>
   </React.StrictMode>
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function
